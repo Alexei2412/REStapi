@@ -1,0 +1,21 @@
+<mat-card class="combat-card-container">
+  <mat-card-content class="combat-card-content">
+    <section class="left-section">
+      <div class="top-left">
+        <img [src]="data()?.img" alt="Estilo de combate">
+      </div>
+      <div class="bottom-left">
+        <p>{{ data()?.description }}</p>
+      </div>
+    </section>
+    
+    <section class="right-section">
+      <h3>Información:</h3>
+      <ul>
+        @for (character of data()?.combat_style_character; track character.id) {
+          <li>{{ character.description }}</li>
+        }
+      </ul>
+    </section>
+  </mat-card-content>
+</mat-card>

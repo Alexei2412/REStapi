@@ -1,0 +1,22 @@
+<p>demon-slayer-characters-list works!</p>
+
+<h3>Estilos de Combate</h3>
+<div style="display: flex; flex-wrap: wrap;">
+  @for (style of combatStylesList; track style.id) {
+    <app-secondary-character-card [data]="style"></app-secondary-character-card>
+  }
+</div>
+
+<hr>
+<h3>Personajes</h3>
+
+@for (item of getDemonSlayerCharacterList(); track item.id) {
+  <app-character-card
+    [data]="item"
+    [type]="characterCardType.ROUNDED"
+  >
+  </app-character-card>
+
+} @empty {
+  <p>no hay elemento para mostrar</p>
+}
